@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { TrainModule } from './train/train.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
         limit: 30,
       },
     ]),
+    TrainModule,
   ],
   controllers: [],
   providers: [
